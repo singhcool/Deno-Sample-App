@@ -5,5 +5,6 @@ const user = new UserController();
 
 router.get("/", user.api);
 router.get("/book/:id", user.getBookByID);
+router.post("/createuser", user.createUser);
 
 export { router };
