@@ -18,5 +18,5 @@ export function logger() {
     .addSink(consoleSink({
       colorOptions: { info: green }, // You can customise the log level colors
     }))
-    .addSink(fileSink("log/all-logs.log"), jsonFormat);
+    .addSink(fileSink("./log/all-logs.log"), jsonFormat);
 }

@@ -1,5 +1,4 @@
 import { Application } from "./config/deps.ts";
-import "https://deno.land/x/dotenv/load.ts";
 import { ErrorMiddleware } from "./middlewares/error.ts";
 import { router } from "./routes/routes.ts";
 import { logger } from './utils/logger.ts';
