@@ -2,13 +2,18 @@ import { Application } from "./config/deps.ts";
 import "https://deno.land/x/dotenv/load.ts";
 import { ErrorMiddleware } from "./middlewares/error.ts";
 import { router } from "./routes/routes.ts";
+import { logger } from './utils/logger.ts';
 
 export class App {
   public app: Application;
   public port: number;
+  public logger: any;
+
   constructor(port: any) {
     this.app = new Application();
     this.port = port;
+    this.logger = logger();
+
     this.initializeErrorHandling();
     this.initializeMiddlewares();
     this.initializeRoutes();
@@ -35,6 +40,6 @@ export class App {
   }
   // server listen
   public async listen() {
-    await this.app.listen({ port: 8000 });
+    return await this.app.listen({ port: this.port });
   }
 }
