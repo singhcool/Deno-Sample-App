@@ -1,10 +1,9 @@
-import { Router, config } from "../config/deps.ts";
-import { api, getBookByID } from "../controllers/user.ts";
+import { Router } from "../config/deps.ts";
+import { UserController } from "../controllers/user.ts";
 const router = new Router();
+const user = new UserController();
 
-router.get("/", api);
-router.get("/book/:id", getBookByID);
+router.get("/", user.api);
+router.get("/book/:id", user.getBookByID);
 
-  export {
-      router,
-  }
+export { router };

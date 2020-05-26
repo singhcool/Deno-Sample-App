@@ -1,24 +1,29 @@
+import { logger } from "../utils/logger.ts";
 
-const books = new Map<string, any>();
-books.set("1", {
-  id: "1",
-  title: "The Hound of the Baskervilles",
-  author: "Conan Doyle, Author Test",
-});
+export class UserController {
+  public logger: any;
+  public book: any;
 
-const api = (ctx: any) =>{
-    ctx.response.body = Deno.env.get('GREETING');
-}
+  constructor() {
+    this.logger = logger();
+    this.book = new Map<string, any>();
+    this.book.set("1", {
+      id: "1",
+      title: "The Hound of the Baskervilles",
+      author: "Conan Doyle, Author Test",
+    });
+  }
 
-const getBookByID = (ctx: any, next: any) =>{
-    if (ctx.params && ctx.params.id && books.has(ctx.params.id)) {
-        ctx.response.body = books.get(ctx.params.id);
-      }else{
-        ctx.throw(404, `No book found for the given book Id ${ctx.params.id} `);
-      }
-}
+  public api = (ctx: any) => {
+    ctx.response.body = Deno.env.get("GREETING");
+  };
 
-export {
-    api,
-    getBookByID
+  public getBookByID = (ctx: any, next: any) => {
+    if (ctx.params && ctx.params.id && this.book.has(ctx.params.id)) {
+      ctx.response.body = this.book.get(ctx.params.id);
+    } else {
+      this.logger.info("No book found for the given book Id {Id}", ctx.params.id);
+      ctx.throw(404, `No book found for the given book Id ${ctx.params.id} `);
+    }
+  };
 }
