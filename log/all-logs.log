@@ -1,1 +1,9 @@
 {"message":"No book found for the given book Id 2","level":"INFO","timestamp":"2020-05-26T14:20:20.085Z","data":{"Id":"2"}}
+{"message":"No User found for the given Id 5ecd6e440001b96d00c49f9f","level":"INFO","timestamp":"2020-05-27T10:31:56.110Z","data":{"Id":"5ecd6e440001b96d00c49f9f"}}
+{"message":"Internal Server Error","level":"ERROR","timestamp":"2020-05-27T10:31:56.113Z","data":{}}
+{"message":"No User found for the given Id 5ecd6e440001b96d00c49f92","level":"INFO","timestamp":"2020-05-27T10:41:44.677Z","data":{"Id":"5ecd6e440001b96d00c49f92"}}
+{"message":"Internal Server Error","level":"ERROR","timestamp":"2020-05-27T10:41:44.678Z","data":{}}
+{"message":"No User found for the given Id 5ecd6e440001b96d00c49f92","level":"INFO","timestamp":"2020-05-27T10:42:08.394Z","data":{"Id":"5ecd6e440001b96d00c49f92"}}
+{"message":"Internal Server Error","level":"ERROR","timestamp":"2020-05-27T10:42:08.395Z","data":{}}
+{"message":"No User found for the given Id 5ecd6e440001b96d00c49f92","level":"INFO","timestamp":"2020-05-27T10:42:50.226Z","data":{"Id":"5ecd6e440001b96d00c49f92"}}
+{"message":"Internal Server Error","level":"ERROR","timestamp":"2020-05-27T10:42:50.227Z","data":{}}
