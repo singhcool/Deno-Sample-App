@@ -19,7 +19,7 @@ export class UserController {
     });
   }
 
-  public getBookByID = (ctx: RouterContext, next: any) => {
+  public getBookByID = (ctx: RouterContext, next: () => Promise<void>) => {
     if (ctx.params && ctx.params.id && this.book.has(ctx.params.id)) {
       ctx.response.body = this.book.get(ctx.params.id);
     } else {
@@ -41,10 +41,9 @@ export class UserController {
    * @bodyparam {String} email
    *
    */
-  public createUser = async (ctx: RouterContext, next: any) => {
-    try {
+  public createUser = async (ctx: RouterContext, next: () => Promise<void>) => {
       const body = await ctx.request.body();
-      if (!Object.keys(body).length) {
+      if (!ctx.request.hasBody) {
         ctx.throw(400, "Request body can not be empty!");
       }
       const { first_name, last_name, email } = body.value;
@@ -55,11 +54,6 @@ export class UserController {
       });
       ctx.response.status = 200;
       ctx.response.body = insertedEmployee;
-    } catch (e) {
-      console.log(e);
-      this.logger.error("Internal Server Error", e);
-      ctx.throw(500, "Internal Server Error");
-    }
   };
 
   /**
@@ -71,8 +65,7 @@ export class UserController {
    *
    */
 
-  public getUserById = async (ctx: RouterContext, next: any) => {
-    try {
+  public getUserById = async (ctx: RouterContext, next: () => Promise<void>) => {
       if (ctx.params && ctx.params.id) {
         const user = await this.user.findOne({
           _id: {
@@ -93,10 +86,6 @@ export class UserController {
           );
         }
       }
-    } catch (e) {
-      this.logger.error("Internal Server Error", e);
-      ctx.throw(500, "Internal Server Error");
-    }
   };
 
   /**
@@ -110,10 +99,9 @@ export class UserController {
    * @queryparam {String} id
    *
    */
-  public updateUserById = async (ctx: RouterContext, next: any) => {
-    try {
+  public updateUserById = async (ctx: RouterContext, next: () => Promise<void>) => {
       const body = await ctx.request.body();
-      if (!Object.keys(body).length) {
+      if (!ctx.request.hasBody) {
         ctx.throw(400, "Request body can not be empty!");
       }
       if (ctx.params && ctx.params.id) {
@@ -141,10 +129,6 @@ export class UserController {
           ctx.throw(404, `No User found for the given Id ${ctx.params.id} `);
         }
       }
-    } catch (e) {
-      this.logger.error("Internal Server Error", e);
-      ctx.throw(500, "Internal Server Error");
-    }
   };
 
   /**
@@ -155,8 +139,7 @@ export class UserController {
    * @queryparam {String} id
    *
    */
-  public deleteUserById = async (ctx: RouterContext, next: any) => {
-    try {
+  public deleteUserById = async (ctx: RouterContext, next: () => Promise<void>) => {
       if (ctx.params && ctx.params.id) {
         const user = await this.user.findOne({
           _id: {
@@ -179,9 +162,5 @@ export class UserController {
           ctx.throw(404, `No User found for the given Id ${ctx.params.id} `);
         }
       }
-    } catch (e) {
-      this.logger.error("Internal Server Error", e);
-      ctx.throw(500, "Internal Server Error");
-    }
   };
 }
