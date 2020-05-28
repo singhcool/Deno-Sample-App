@@ -2,6 +2,7 @@ import { Application } from "./config/deps.ts";
 import { ErrorMiddleware } from "./middlewares/error.ts";
 import { router } from "./routes/routes.ts";
 import { logger } from './utils/logger.ts';
+import { oakCors } from "https://deno.land/x/cors/mod.ts";
 
 export class App {
   public app: Application;
@@ -30,6 +31,7 @@ export class App {
   // initialize error handling
   private initializeErrorHandling() {
     this.app.use(ErrorMiddleware);
+    this.app.use(oakCors());
   }
 
   // initialize routes

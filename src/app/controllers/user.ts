@@ -46,7 +46,7 @@ export class UserController {
       if (!ctx.request.hasBody) {
         ctx.throw(400, "Request body can not be empty!");
       }
-      const { first_name, last_name, email } = body.value;
+      const { first_name, last_name, email }:User = body.value;
       const insertedEmployee = await this.user.insertOne({
         first_name,
         last_name,
@@ -111,13 +111,14 @@ export class UserController {
           },
         });
         if (user) {
+          const user:User = body.value;
           const updatedPost = await this.user.updateOne(
             {
               _id: {
                 $oid: ctx.params.id,
               },
             },
-            body.value
+            user
           );
           ctx.response.status = 200;
           ctx.response.body = updatedPost;
