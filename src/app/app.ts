@@ -2,6 +2,7 @@ import { Application } from "./config/deps.ts";
 import { ErrorMiddleware } from "./middlewares/error.ts";
 import { router } from "./routes/routes.ts";
 import { logger } from './utils/logger.ts';
+import { notFound } from './utils/404.ts';
 import { oakCors } from "https://deno.land/x/cors/mod.ts";
 
 export class App {
@@ -38,6 +39,7 @@ export class App {
   private initializeRoutes() {
     this.app.use(router.routes());
     this.app.use(router.allowedMethods());
+    this.app.use(notFound);
   }
   // server listen
   public async listen() {
