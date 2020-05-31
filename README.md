@@ -2,7 +2,7 @@
 
 ## Description
 
-<a href="https://deno.land"><img src="https://deno.land/logo.svg" style="width: 150px;height: 150px;"></a>
+<a href="https://deno.land"><img src="https://deno.land/logo.svg" width="150"></a>
 
 REST API in Deno using MongoDB and Oak
 
