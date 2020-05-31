@@ -1,1 +1,0 @@
-{"message":"Internal Server Error name TypeError message Cannot destructure property 'first_name' of 'body.value' as it is undefined.","level":"INFO","timestamp":"2020-05-27T16:10:24.457Z","data":{"err":"TypeError","message":"Cannot destructure property 'first_name' of 'body.value' as it is undefined."}}
