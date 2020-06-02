@@ -12,7 +12,8 @@ REST API in Deno using MongoDB and Oak
 - *Import the npm packages using [jspm.io](https://jspm.io/)*
 - *Create Rest API using Mongo DB*
 - *Implemet the Error Log*
-- *Class validatior Integrated*
+- *Class validator Integrated*
+- *Docker build setup*
 
 **ROADMAP:**
 - [ ] *Swagger Documentation*
