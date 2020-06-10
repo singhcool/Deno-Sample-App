@@ -1,0 +1,55 @@
+<!-- HTML for static distribution bundle build -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>School Assignment</title>
+    <link rel="stylesheet" type="text/css" href="/api-docs/swagger-ui.css" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="/api-docs/favicon-32x32.png"
+      sizes="32x32"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="/api-docs/favicon-16x16.png"
+      sizes="16x16"
+    />
+    <style>
+      .swagger-ui .topbar {
+        display: none !important;
+      }
+      .logo {
+        display: block;
+        height: 160px;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body>
+    <img class="logo" src="/api-docs/logo.png" />
+    <div id="swagger-ui"></div>
+
+    <script src="/api-docs/swagger-ui-bundle.js"></script>
+    <script src="/api-docs/swagger-ui-standalone-preset.js"></script>
+    <script>
+      window.onload = function() {
+        // Begin Swagger UI call region
+        const ui = SwaggerUIBundle({
+          url: "http://localhost:8000/swagger.json",
+          dom_id: "#swagger-ui",
+          docExpansion: "none",
+          deepLinking: true,
+          presets: [SwaggerUIBundle.presets.apis, SwaggerUIStandalonePreset],
+          plugins: [SwaggerUIBundle.plugins.DownloadUrl],
+          layout: "StandaloneLayout"
+        });
+        // End Swagger UI call region
+
+        window.ui = ui;
+      };
+    </script>
+  </body>
+</html>
