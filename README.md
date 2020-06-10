@@ -14,9 +14,9 @@ REST API in Deno using MongoDB and Oak
 - *Implemet the Error Log*
 - *Class validator Integrated*
 - *Docker build setup*
+- *Swagger Documentation*
 
 **ROADMAP:**
-- [ ] *Swagger Documentation*
 - [ ] *Authentication and Protected and Public Routes*
 
 
