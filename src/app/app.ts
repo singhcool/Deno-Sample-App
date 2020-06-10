@@ -4,7 +4,7 @@ import { router } from "./routes/routes.ts";
 import { logger } from './utils/logger.ts';
 import { notFound } from './utils/404.ts';
 import { oakCors } from "https://deno.land/x/cors/mod.ts";
-import  { swaggerDoc } from 'https://raw.githubusercontent.com/singhcool/deno-swagger-doc/feature/swaggwe-doc/mod.ts';
+import  { swaggerDoc } from 'https://raw.githubusercontent.com/singhcool/deno-swagger-doc/master/mod.ts';
 import { createRequire } from "https://deno.land/std/node/module.ts";
 const require = createRequire(import.meta.url);
 
