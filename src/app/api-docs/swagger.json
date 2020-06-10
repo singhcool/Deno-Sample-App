@@ -1,0 +1,25 @@
+{
+  "info": {
+    "title": "DENO REST API with Mongo- API DOCUMENTATION",
+    "version": "1.0.0",
+    "description": "User Details",
+    "termsOfService": "",
+    "contact": {
+      "email": "singhcoolish@gmail.com"
+    },
+    "license": {
+      "name": "Apache 2.0",
+      "url": "https://www.apache.org/licenses/LICENSE-2.0"
+    }
+  },
+  "host": "localhost:8000",
+  "basePath": "/",
+  "schemes": ["http", "https"],
+  "securityDefinitions": {
+    "JWT": {
+      "type": "apiKey",
+      "name": "authorization",
+      "in": "header"
+    }
+  }
+}
