@@ -31,4 +31,4 @@ REST API in Deno using MongoDB and Oak
 
 * Author - [Raja SIngh](https://www.linkedin.com/in/raja-singh-a097458a/)
 * Medium - [@singhcoolish](https://medium.com/@singhcoolish)
-* LinkedIn = [raja-singh-a097458a](https://www.linkedin.com/in/raja-singh-a097458a/)
+* LinkedIn - [raja-singh-a097458a](https://www.linkedin.com/in/raja-singh-a097458a/)
